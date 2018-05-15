@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { PostService } from './post/post.service';
 import { HomepageComponent } from './homepage/homepage.component';
+import { PostShowComponent } from './post-show/post-show.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
-    HomepageComponent
+    HomepageComponent,
+    PostShowComponent
   ],
   imports: [
     BrowserModule,

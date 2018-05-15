@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 import { PostComponent } from './post/post.component';
+import { PostShowComponent } from './post-show/post-show.component';
 import { HomepageComponent } from './homepage/homepage.component';
 
 const appRoutes: Routes = [
@@ -12,9 +13,12 @@ const appRoutes: Routes = [
     component: HomepageComponent
   },
   {
-
     path: 'posts',
     component: PostComponent
+  },
+  {
+    path: 'posts/:id',
+    component: PostShowComponent
   }
 
 
