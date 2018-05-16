@@ -42,7 +42,7 @@ export class PostShowComponent implements OnInit {
 
   update(post: Post) {
     this.editBtnClicked = true;
-    this.postService.updatePost(this.post.id)
+    this.postService.updatePost(post)
       .subscribe(data => {
         return true
       }, error => {
@@ -58,6 +58,12 @@ export class PostShowComponent implements OnInit {
         this.router.navigate([this.returnUrl]);
       },
       error => this.errorMessage = error);
+  }
+
+  onUpdateClicked() {
+    this.router.navigate([this.returnUrl]);
+    this.editBtnClicked = false;
+    // window.location.reload(); javascript method to auto reload the page
   }
 
 }

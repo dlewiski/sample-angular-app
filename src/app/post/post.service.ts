@@ -37,7 +37,7 @@ export class PostService {
   }
 
   updatePost(post: Post): Observable<Post> {
-    const url = `${this.postsUrl}/${id}`;
+    const url = `${this.postsUrl}/${post.id}`;
     return this.http.put(url, JSON.stringify(post), this.options).map((res: Response) => res.json())
       .catch(this.handleError);
   }

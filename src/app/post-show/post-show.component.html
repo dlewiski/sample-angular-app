@@ -6,3 +6,33 @@
 <button type="button" (click)="delete(post)" class="btn btn-danger">Delete Post</button><br>
 <a routerLink='/posts'>Back to posts</a><br>
 <a routerLink=''> Homepage</a>
+
+<div class="row" [hidden]="!editBtnClicked">
+  <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+    <form #postForm='ngForm'>
+      <div class="form-group">
+        <label for="title">Title of Post</label>
+        <input type="text" class="form-control" name="title" id="title"
+        placeholder="Updated title"
+        required
+        #title='ngModel'
+        [(ngModel)]='post.title'>
+        <div [hidden]='title.valid || title.pristine' class="alert alert-danger">
+          Title is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" name="description" id="description"
+        required rows="3"
+        #description='ngModel'
+        [(ngModel)]='post.description'></textarea>
+        <div [hidden]='description.valid || description.pristine' class="alert alert-danger">
+          Description is required
+        </div>
+      </div>
+
+      <button type="submit" (click)="update(post); onUpdateClicked()" class="btn btn-success" [disabled]="!postForm.form.valid">Submit</button>
+    </form>
+  </div>
+</div>
