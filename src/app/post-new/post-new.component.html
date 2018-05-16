@@ -1,6 +1,6 @@
 <h2>Create a Post!</h2>
 <div class="container">
-  <form (ngSubmit)="createPost(post)" #postForm='ngForm'>
+  <form (ngSubmit)="createPost(post); postForm.reset()" #postForm='ngForm'>
     <div class="form-group">
       <label for="title">Title of Post</label>
       <input type="text" class="form-control" name="title" id="title"
@@ -23,4 +23,9 @@
     </div>
     <button type="submit" class="btn btn-success" [disabled]="!postForm.form.valid" [hidden]="submitted">Submit</button>
   </form>
+
+  <div [hidden]="!submitted" class="alert alert-success" role="alert"> Your post has been successfully created.
+    <a class="alert-link" routerLink="/posts">View all Posts</a>
+  </div>
+
 </div>
