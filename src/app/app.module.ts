@@ -10,6 +10,7 @@ import { PostComponent } from './post/post.component';
 import { PostService } from './post/post.service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { PostShowComponent } from './post-show/post-show.component';
+import { PostNewComponent } from './post-new/post-new.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PostShowComponent } from './post-show/post-show.component';
     AppComponent,
     PostComponent,
     HomepageComponent,
-    PostShowComponent
+    PostShowComponent,
+    PostNewComponent
   ],
   imports: [
     BrowserModule,
