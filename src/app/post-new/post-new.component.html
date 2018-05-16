@@ -1,3 +1,26 @@
-<p>
-  post-new works!
-</p>
+<h2>Create a Post!</h2>
+<div class="container">
+  <form (ngSubmit)="createPost(post)" #postForm='ngForm'>
+    <div class="form-group">
+      <label for="title">Title of Post</label>
+      <input type="text" class="form-control" name="title" id="title"
+      required placeholder="New Post"
+      #title='ngModel'
+      [(ngModel)]='post.title'>
+      <div [hidden]='title.valid || title.pristine' class="alert alert-danger">
+        Title is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" name="description" id="description"
+      required rows="3"
+      #description='ngModel'
+      [(ngModel)]='post.description'></textarea>
+      <div [hidden]='description.valid || description.pristine' class="alert alert-danger">
+        Description is required
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!postForm.form.valid" [hidden]="submitted">Submit</button>
+  </form>
+</div>
