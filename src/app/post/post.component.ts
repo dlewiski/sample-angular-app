@@ -31,4 +31,6 @@ export class PostComponent implements OnInit {
     this.router.navigate(postLink);
   }
 
+  
+
 }

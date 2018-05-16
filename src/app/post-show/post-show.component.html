@@ -1,6 +1,8 @@
 <div *ngIf="post">
   <h2>{{ post.title }}</h2>
-
+  <h2>{{ post.id }}</h2>
 </div>
+<button type="button" (click)="update(post)" class="btn btn-primary">Update Post</button>
+<button type="button" (click)="delete(post)" class="btn btn-danger">Delete Post</button><br>
 <a routerLink='/posts'>Back to posts</a><br>
 <a routerLink=''> Homepage</a>
